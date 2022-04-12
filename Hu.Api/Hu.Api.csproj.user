@@ -4,7 +4,7 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup>
-    <ActiveDebugProfile>MyToDo.Api</ActiveDebugProfile>
+    <ActiveDebugProfile>Hu.Api</ActiveDebugProfile>
     <NameOfLastUsedPublishProfile>F:\Self_Study\Wpf\MyToDo\MyToDo.Api\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

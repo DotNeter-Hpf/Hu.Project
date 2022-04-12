@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,11 +14,7 @@ namespace Hu.Shared.Models
         /// <summary>
         /// 状态码
         /// </summary>
-        public int status { get; set; } = 200;
-        /// <summary>
-        /// 操作是否成功
-        /// </summary>
-        public bool success { get; set; } = false;
+        public ResultStatus status { get; set; } = ResultStatus.Success;
         /// <summary>
         /// 返回信息
         /// </summary>
@@ -35,7 +32,7 @@ namespace Hu.Shared.Models
         /// <returns></returns>
         public static MessageModel<T> Success(string msg = "成功")
         {
-            return Message(true, msg, default);
+            return Message(msg, default, ResultStatus.Success);
         }
         /// <summary>
         /// 返回成功
@@ -47,7 +44,6 @@ namespace Hu.Shared.Models
         {
             return new MessageModel<T>()
             {
-                success = true,
                 msg = msg,
                 response = response,
             };
@@ -59,7 +55,7 @@ namespace Hu.Shared.Models
         /// <returns></returns>
         public static MessageModel<T> Fail(string msg = "失败")
         {
-            return Message(false, msg, default);
+            return Message(msg, default, ResultStatus.Fail);
         }
         /// <summary>
         /// 返回失败
@@ -69,18 +65,36 @@ namespace Hu.Shared.Models
         /// <returns></returns>
         public static MessageModel<T> Fail(string msg, T response)
         {
-            return Message(false, msg, response);
+            return Message(msg, response, ResultStatus.Fail);
+        }
+        /// <summary>
+        /// 返回异常
+        /// </summary>
+        /// <param name="msg">消息</param>
+        /// <returns></returns>
+        public static MessageModel<T> Error(string msg = "异常")
+        {
+            return Message(msg, default, ResultStatus.Error);
+        }
+        /// <summary>
+        /// 返回异常
+        /// </summary>
+        /// <param name="msg">消息</param>
+        /// <param name="response">数据</param>
+        /// <returns></returns>
+        public static MessageModel<T> Error(string msg, T response)
+        {
+            return Message(msg, response, ResultStatus.Error);
         }
         /// <summary>
         /// 返回消息
         /// </summary>
-        /// <param name="success">失败/成功</param>
         /// <param name="msg">消息</param>
         /// <param name="response">数据</param>
         /// <returns></returns>
-        public static MessageModel<T> Message(bool success, string msg, T response)
+        public static MessageModel<T> Message(string msg, T response, ResultStatus status)
         {
-            return new MessageModel<T>() { msg = msg, response = response, success = success };
+            return new MessageModel<T>() { msg = msg, response = response };
         }
     }
 
@@ -92,11 +106,7 @@ namespace Hu.Shared.Models
         /// <summary>
         /// 状态码
         /// </summary>
-        public int status { get; set; } = 200;
-        /// <summary>
-        /// 操作是否成功
-        /// </summary>
-        public bool success { get; set; } = false;
+        public ResultStatus status { get; set; } = ResultStatus.Success;
         /// <summary>
         /// 返回信息
         /// </summary>
@@ -107,27 +117,52 @@ namespace Hu.Shared.Models
         public object response { get; set; }
 
 
-        public static MessageModel Success(string msg = "成功", int status = 200)
+        public static MessageModel Success(string msg = "成功")
         {
-            return Message(true, msg, default, status);
+            return Message(msg, default, ResultStatus.Success);
         }
 
 
-        public static MessageModel Success(object response, string msg = "成功", int status = 200)
+        public static MessageModel Success(object response, string msg = "成功")
         {
-            return Message(true, msg, response, status);
+            return Message(msg, response, ResultStatus.Success);
         }
 
 
-        public static MessageModel Fail(string msg = "失败", int status = 201)
+        public static MessageModel Fail(string msg = "失败")
         {
-            return Message(false, msg, default, status);
+            return Message(msg, default, ResultStatus.Fail);
+        }
+
+        public static MessageModel Fail(object response, string msg = "失败")
+        {
+            return Message(msg, response, ResultStatus.Fail);
+        }
+
+        public static MessageModel Error(string msg = "异常")
+        {
+            return Message(msg, default, ResultStatus.Error);
+        }
+
+        public static MessageModel Error(object response, string msg = "异常")
+        {
+            return Message(msg, response, ResultStatus.Error);
         }
 
 
-        public static MessageModel Message(bool success, string msg, object response, int status)
+        public static MessageModel Message(string msg, object response, ResultStatus status)
         {
-            return new MessageModel() { msg = msg, response = response, success = success, status = status };
+            return new MessageModel() { msg = msg, response = response, status = status };
         }
+    }
+
+    public enum ResultStatus
+    {
+        [Description("请求失败")]
+        Fail = 0,
+        [Description("请求成功")]
+        Success = 1,
+        [Description("请求异常")]
+        Error = -1
     }
 }

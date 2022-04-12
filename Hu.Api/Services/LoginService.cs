@@ -49,7 +49,7 @@ namespace Hu.Api.Services
             }
             catch (Exception ex)
             {
-                return MessageModel.Fail("注册账号失败:" + ex.Message);
+                return MessageModel.Error("注册账号失败:" + ex.Message);
             }
         }
 
@@ -71,7 +71,7 @@ namespace Hu.Api.Services
             }
             catch (Exception ex)
             {
-                return MessageModel.Fail(ex.Message);
+                return MessageModel.Error(ex.Message);
             }
         }
     }

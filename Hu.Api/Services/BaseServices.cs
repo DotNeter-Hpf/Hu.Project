@@ -38,7 +38,7 @@ namespace Hu.Api.Services
             }
             catch (Exception ex)
             {
-                return MessageModel.Fail(ex.Message);
+                return MessageModel.Error(ex.Message);
             }
         }
 
@@ -57,7 +57,7 @@ namespace Hu.Api.Services
             }
             catch (Exception ex)
             {
-                return MessageModel.Fail(ex.Message);
+                return MessageModel.Error(ex.Message);
             }
         }
 
@@ -109,7 +109,7 @@ namespace Hu.Api.Services
             }
             catch (Exception ex)
             {
-                return MessageModel.Fail(ex.Message);
+                return MessageModel.Error(ex.Message);
             }
         }
 
@@ -129,7 +129,7 @@ namespace Hu.Api.Services
             }
             catch (Exception ex)
             {
-                return MessageModel.Fail(ex.Message);
+                return MessageModel.Error(ex.Message);
             }
         }
 

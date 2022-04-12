@@ -17,6 +17,7 @@ namespace Hu.Api.Controllers
             return new MessageModel<T>()
             {
                 success = true,
+                status = ResultStatus.Success,
                 msg = msg,
                 response = data,
             };
@@ -28,28 +29,29 @@ namespace Hu.Api.Controllers
             return new MessageModel()
             {
                 success = true,
+                status=ResultStatus.Success,
                 msg = msg,
                 response = null,
             };
         }
         [NonAction]
-        public MessageModel<string> Failed(string msg = "失败", int status = 500)
+        public MessageModel<string> Failed(string msg = "失败")
         {
             return new MessageModel<string>()
             {
                 success = false,
-                status = status,
+                status = ResultStatus.Fail,
                 msg = msg,
                 response = null,
             };
         }
         [NonAction]
-        public MessageModel<T> Failed<T>(string msg = "失败", int status = 500)
+        public MessageModel<T> Failed<T>(string msg = "失败")
         {
             return new MessageModel<T>()
             {
                 success = false,
-                status = status,
+                status = ResultStatus.Fail,
                 msg = msg,
                 response = default,
             };
@@ -61,6 +63,7 @@ namespace Hu.Api.Controllers
             return new MessageModel<PageModel<T>>()
             {
                 success = true,
+                status = ResultStatus.Success,
                 msg = msg,
                 response = new PageModel<T>(page, dataCount, pageSize, data)
 
@@ -73,6 +76,7 @@ namespace Hu.Api.Controllers
             return new MessageModel<PageModel<T>>()
             {
                 success = true,
+                status = ResultStatus.Success,
                 msg = msg,
                 response = pageModel
             };

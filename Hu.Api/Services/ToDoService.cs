@@ -88,7 +88,7 @@ namespace Hu.Api.Services
             }
             catch (Exception)
             {
-                return MessageModel.Fail();
+                return MessageModel.Error();
             }
         }
     }
