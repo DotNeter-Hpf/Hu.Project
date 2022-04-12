@@ -9,6 +9,62 @@ namespace Hu.Shared.Models
     /// <summary>
     /// 通用返回信息类
     /// </summary>
+    public class MessageModel
+    {
+        /// <summary>
+        /// 状态码
+        /// </summary>
+        public ResultStatus status { get; set; } = ResultStatus.Success;
+        /// <summary>
+        /// 返回信息
+        /// </summary>
+        public string msg { get; set; } = "";
+        /// <summary>
+        /// 返回数据集合
+        /// </summary>
+        public object response { get; set; }
+
+
+        public static MessageModel Success(string msg = "成功")
+        {
+            return Message(msg, default, ResultStatus.Success);
+        }
+
+
+        public static MessageModel Success(object response, string msg = "成功")
+        {
+            return Message(msg, response, ResultStatus.Success);
+        }
+
+
+        public static MessageModel Fail(string msg = "失败")
+        {
+            return Message(msg, default, ResultStatus.Fail);
+        }
+
+        public static MessageModel Fail(object response, string msg = "失败")
+        {
+            return Message(msg, response, ResultStatus.Fail);
+        }
+
+        public static MessageModel Error(string msg = "异常")
+        {
+            return Message(msg, default, ResultStatus.Error);
+        }
+
+        public static MessageModel Error(object response, string msg = "异常")
+        {
+            return Message(msg, response, ResultStatus.Error);
+        }
+
+
+        public static MessageModel Message(string msg, object response, ResultStatus status)
+        {
+            return new MessageModel() { msg = msg, response = response, status = status };
+        }
+    }
+    
+
     public class MessageModel<T>
     {
         /// <summary>
@@ -98,63 +154,6 @@ namespace Hu.Shared.Models
         }
     }
 
-
-
-
-    public class MessageModel
-    {
-        /// <summary>
-        /// 状态码
-        /// </summary>
-        public ResultStatus status { get; set; } = ResultStatus.Success;
-        /// <summary>
-        /// 返回信息
-        /// </summary>
-        public string msg { get; set; } = "";
-        /// <summary>
-        /// 返回数据集合
-        /// </summary>
-        public object response { get; set; }
-
-
-        public static MessageModel Success(string msg = "成功")
-        {
-            return Message(msg, default, ResultStatus.Success);
-        }
-
-
-        public static MessageModel Success(object response, string msg = "成功")
-        {
-            return Message(msg, response, ResultStatus.Success);
-        }
-
-
-        public static MessageModel Fail(string msg = "失败")
-        {
-            return Message(msg, default, ResultStatus.Fail);
-        }
-
-        public static MessageModel Fail(object response, string msg = "失败")
-        {
-            return Message(msg, response, ResultStatus.Fail);
-        }
-
-        public static MessageModel Error(string msg = "异常")
-        {
-            return Message(msg, default, ResultStatus.Error);
-        }
-
-        public static MessageModel Error(object response, string msg = "异常")
-        {
-            return Message(msg, response, ResultStatus.Error);
-        }
-
-
-        public static MessageModel Message(string msg, object response, ResultStatus status)
-        {
-            return new MessageModel() { msg = msg, response = response, status = status };
-        }
-    }
 
     public enum ResultStatus
     {
