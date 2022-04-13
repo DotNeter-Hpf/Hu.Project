@@ -8373,11 +8373,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Self_Study\\Hu.Project\\Hu.Api\\Hu.Api.csproj",
+      "projectUniqueName": "F:\\Self_Study\\GitHuRepository\\Hu.Project\\Hu.Api\\Hu.Api.csproj",
       "projectName": "Hu.Api",
-      "projectPath": "F:\\Self_Study\\Hu.Project\\Hu.Api\\Hu.Api.csproj",
+      "projectPath": "F:\\Self_Study\\GitHuRepository\\Hu.Project\\Hu.Api\\Hu.Api.csproj",
       "packagesPath": "C:\\Users\\HuPiFeng\\.nuget\\packages\\",
-      "outputPath": "F:\\Self_Study\\Hu.Project\\Hu.Api\\obj\\",
+      "outputPath": "F:\\Self_Study\\GitHuRepository\\Hu.Project\\Hu.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\SoftWare\\VisualStudio2019\\Shared\\NuGetPackages"
@@ -8399,8 +8399,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "F:\\Self_Study\\Hu.Project\\Hu.Shared\\Hu.Shared.csproj": {
-              "projectPath": "F:\\Self_Study\\Hu.Project\\Hu.Shared\\Hu.Shared.csproj"
+            "F:\\Self_Study\\GitHuRepository\\Hu.Project\\Hu.Shared\\Hu.Shared.csproj": {
+              "projectPath": "F:\\Self_Study\\GitHuRepository\\Hu.Project\\Hu.Shared\\Hu.Shared.csproj"
             }
           }
         }

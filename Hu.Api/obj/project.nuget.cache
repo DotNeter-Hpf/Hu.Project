@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FvKwyCOTmCyFOyNF12q3lPPSW5ZGqrtNdkj5I7XbCXX8QPb35H/PJtehXIo/fOJvJMaixo3E2I09XGTYoQiNbA==",
+  "dgSpecHash": "bF+rJKvkjiwxGq8NSJdwNcPnJ4JMhXlLrwqgiITy/3jNEY/Yzd39s51HArHQOdglxu0NGUGCUS3RZKAH/h44YQ==",
   "success": true,
-  "projectFilePath": "F:\\Self_Study\\Hu.Project\\Hu.Api\\Hu.Api.csproj",
+  "projectFilePath": "F:\\Self_Study\\GitHuRepository\\Hu.Project\\Hu.Api\\Hu.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HuPiFeng\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\HuPiFeng\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
