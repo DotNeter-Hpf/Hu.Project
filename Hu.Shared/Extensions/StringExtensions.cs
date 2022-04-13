@@ -11,11 +11,20 @@ namespace Hu.Shared.Extensions
     {
         public static string GetMD5(this string data)
         {
-            if (string.IsNullOrEmpty(data))
-                throw new ArgumentNullException(nameof(data));
+            if (string.IsNullOrWhiteSpace(data))
+            {
+                return string.Empty;
+            }
 
-            var hash = MD5.Create().ComputeHash(Encoding.Default.GetBytes(data));
-            return Convert.ToBase64String(hash);
+            var md5Algorithm = MD5.Create();
+            var utf8Bytes = Encoding.UTF8.GetBytes(data);
+            var md5Hash = md5Algorithm.ComputeHash(utf8Bytes);
+            var hexString = new StringBuilder();
+            foreach (var hexByte in md5Hash)
+            {
+                hexString.Append(hexByte.ToString("x2"));
+            }
+            return hexString.ToString();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Hu.Api.Extensions
             SqlSugarClient db = new SqlSugarClient(new ConnectionConfig()
             {
                 ConnectionString = Config.ConnectionString,
-                DbType = DbType.MySql,
+                DbType = DbType.SqlServer,
                 IsAutoCloseConnection = true
             });
 

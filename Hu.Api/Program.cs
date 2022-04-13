@@ -56,11 +56,6 @@ builder.Services.AddQuartzUI();
 builder.Services.AddQuartzClassJobs(); //添加本地调度任务访问
 
 
-builder.Services.Configure<EmailOptions>(
-    builder.Configuration.GetSection(EmailOptions.Email));
-
-
-
 var app = builder.Build();
 
 app.UseQuartz();

@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace Hu.Api.Services.IServices
 {
-    public interface ILoginService : IBaseService<User, UserDto>
+    public interface ILoginService : IBaseService<UserManage, UserManageDto>
     {
-        Task<MessageModel> LoginAsync(UserDto user);
+        Task<MessageModel> LoginAsync(string userName, string passWord);
 
 
-        Task<MessageModel> RegisterAsync(UserDto user);
+        //Task<MessageModel> RegisterAsync(UserManageDto dto);
 
     }
 }

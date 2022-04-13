@@ -10,6 +10,6 @@ namespace Hu.Api
         /// <summary>
         /// Account have permission to create database
         /// </summary>
-        public static readonly string ConnectionString = "server=127.0.0.1;Database=ToDoDB;Uid=root;Pwd=root; AllowLoadLocalInfile=true;";
+        public static readonly string ConnectionString = "Server=47.104.11.154;User ID=sa;Password=sa@2008;database=OeeIot;MultipleActiveResultSets=true;";
     }
 }

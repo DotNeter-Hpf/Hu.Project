@@ -4,35 +4,29 @@
         <name>Hu.Api</name>
     </assembly>
     <members>
+        <member name="T:Hu.Api.Areas.System.Controllers.LoginController">
+            <summary>
+            登录Controller
+            </summary>
+        </member>
+        <member name="M:Hu.Api.Areas.System.Controllers.LoginController.#ctor(Hu.Api.Services.IServices.ILoginService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_loginService">具体业务处理</param>
+        </member>
+        <member name="M:Hu.Api.Areas.System.Controllers.LoginController.Login(System.String,System.String)">
+            <summary>
+            登录功能
+            </summary>
+            <param name="userName"></param>
+            <param name="passWord"></param>
+            <returns></returns>
+        </member>
         <member name="F:Hu.Api.Config.ConnectionString">
             <summary>
             Account have permission to create database
             </summary>
-        </member>
-        <member name="T:Hu.Api.Controllers.LoginController">
-            <summary>
-            账户控制器
-            </summary>
-        </member>
-        <member name="M:Hu.Api.Controllers.LoginController.Register(Hu.Shared.Dtos.UserDto)">
-            <summary>
-            注册功能
-            </summary>
-            <param name="userDto"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Hu.Api.Controllers.LoginController.Login(Hu.Shared.Dtos.UserDto)">
-            <summary>
-            登录功能
-            </summary>
-            <param name="userDto"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Hu.Api.Controllers.LoginController.SendEmail">
-            <summary>
-            使用 NETCore.MailKit 实现发送邮件
-            </summary>
-            <returns></returns>
         </member>
         <member name="T:Hu.Api.Controllers.MemoController">
             <summary>
@@ -131,6 +125,16 @@
             首页数据的获取
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:Hu.Api.Extensions.Global">
+            <summary>
+            全局变量
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Extensions.Global.CurrentTime">
+            <summary>
+            部署到Azure，服务器时间都是UTC，需要 .AddHours(8) 变成本地时间
+            </summary>
         </member>
         <member name="T:Hu.Api.Extensions.ToSqlExplain">
             <summary>
@@ -238,6 +242,31 @@
             <param name="thisValue"></param>
             <returns></returns>
         </member>
+        <member name="T:Hu.Api.Models.Area">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Area.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Area.AreaName">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Area.FatherId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Area.MaxLevel">
+             <summary>
+             储存最大的父级名称 
+            </summary>
+        </member>
         <member name="T:Hu.Api.Models.BaseModel">
             <summary>
             实体类的基类
@@ -258,34 +287,894 @@
             修改日期
             </summary>
         </member>
-        <member name="T:Hu.Api.Models.EmailOptions">
-            <summary>
-            邮件属性实体类
+        <member name="T:Hu.Api.Models.CalculationRate">
+             <summary>
+             
             </summary>
         </member>
-        <member name="P:Hu.Api.Models.EmailOptions.FromAddress">
-            <summary>
-            发件者邮箱
+        <member name="P:Hu.Api.Models.CalculationRate.Id">
+             <summary>
+              
             </summary>
         </member>
-        <member name="P:Hu.Api.Models.EmailOptions.ToAddress">
-            <summary>
-            接收人邮箱
+        <member name="P:Hu.Api.Models.CalculationRate.DevID">
+             <summary>
+              
             </summary>
         </member>
-        <member name="P:Hu.Api.Models.EmailOptions.Host">
-            <summary>
-            主机
+        <member name="P:Hu.Api.Models.CalculationRate.ShiftID">
+             <summary>
+             班别 
             </summary>
         </member>
-        <member name="P:Hu.Api.Models.EmailOptions.UserName">
-            <summary>
-            发件邮箱账号
+        <member name="P:Hu.Api.Models.CalculationRate.Time">
+             <summary>
+              
             </summary>
         </member>
-        <member name="P:Hu.Api.Models.EmailOptions.Password">
-            <summary>
-            发件邮箱密码
+        <member name="P:Hu.Api.Models.CalculationRate.AvailabilityB">
+             <summary>
+             班可用率 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.CalculationRate.AvailabilityD">
+             <summary>
+             日可用率 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.CalculationRate.PerformanceB">
+             <summary>
+             班绩效率 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.CalculationRate.PerformanceD">
+             <summary>
+             日绩效率 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.CalculationRate.QualityrateB">
+             <summary>
+             班质量率 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.CalculationRate.QualityrateD">
+             <summary>
+             日质量率 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.CalculationRate.ShiftOEE">
+             <summary>
+             班Oee 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.CalculationRate.DailyOEE">
+             <summary>
+             日Oee 
+            </summary>
+        </member>
+        <member name="T:Hu.Api.Models.Department">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Department.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Department.Name">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Department.Description">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Department.FatherId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:Hu.Api.Models.Device">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Device.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Device.DevID">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Device.OeeID">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Device.AndonID">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Device.IotID">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Device.RprtID">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:Hu.Api.Models.Dictionary">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Dictionary.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Dictionary.TypeName">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Dictionary.Type">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Dictionary.FatherId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Dictionary.Marke">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Dictionary.TypeValue">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Dictionary.Yl1">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Dictionary.Yl2">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Dictionary.Yl3">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Dictionary.Status">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:Hu.Api.Models.EventData">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.EventData.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.EventData.DevID">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.EventData.PartNo">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.EventData.SerialNo">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.EventData.ProcessHour">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.EventData.Status">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.EventData.Time">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.EventData.Source">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:Hu.Api.Models.Iot">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Iot.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Iot.DevID">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Iot.Status">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Iot.Time">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Iot.Source">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:Hu.Api.Models.Module">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Module.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Module.Menu">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Module.Icon">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Module.Title">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Module.Path">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Module.ComponentOne">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Module.Component">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Module.FatherId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Module.Sort">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Module.PowerMark">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:Hu.Api.Models.NLogInfo">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.NLogInfo.LogId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.NLogInfo.Date">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.NLogInfo.Origin">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.NLogInfo.Level">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.NLogInfo.Message">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.NLogInfo.Detail">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:Hu.Api.Models.OeeKanBan">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeKanBan.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeKanBan.Area">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeKanBan.DaBiaoCount">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeKanBan.Count">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeKanBan.DaBiaoBaiFenBi">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeKanBan.Time">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeKanBan.Type">
+             <summary>
+             0代表总的，1代表每个设备 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeKanBan.Factory">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:Hu.Api.Models.OeeTerm">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTerm.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTerm.DevID">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTerm.Ida">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTerm.Status">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTerm.AndonState">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTerm.RprtBarCode">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTerm.User">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTerm.Time">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTerm.EndTime">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTerm.Production">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTerm.Source">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTerm.PartNo">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTerm.SerialNo">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTerm.QualityRate">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTerm.ProcessHour">
+             <summary>
+             工艺工时 
+            </summary>
+        </member>
+        <member name="T:Hu.Api.Models.OeeTermRecord">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTermRecord.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTermRecord.DevID">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTermRecord.Ida">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTermRecord.Status">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTermRecord.AndonState">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTermRecord.RprtBarCode">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTermRecord.User">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTermRecord.Time">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTermRecord.EndTime">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTermRecord.Production">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTermRecord.PartNo">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTermRecord.SerialNo">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTermRecord.QualityRate">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.OeeTermRecord.ProcessHour">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:Hu.Api.Models.Part">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Part.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Part.DevID">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Part.PartNo">
+             <summary>
+             零件号 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Part.SerialNo">
+             <summary>
+             零件序号 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Part.Type">
+             <summary>
+             零件类型 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Part.ModelNumber">
+             <summary>
+             型号 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Part.ProcessHour">
+             <summary>
+             工艺工时 
+            </summary>
+        </member>
+        <member name="T:Hu.Api.Models.PowerBiDataShow">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.ShiftID">
+             <summary>
+             哪个班组 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.DevID">
+             <summary>
+             设备ID 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.Time">
+             <summary>
+             日期 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.PlanStop">
+             <summary>
+             计划停机 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.Maintain">
+             <summary>
+             保养 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.Quality">
+             <summary>
+             质量停工 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.Device">
+             <summary>
+             设备故障 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.Material">
+             <summary>
+             缺料 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.NoPerson">
+             <summary>
+             人员不在岗 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.ChangeTools">
+             <summary>
+             工具更换 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.ChangeModel">
+             <summary>
+             换型 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.Other">
+             <summary>
+             其他 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.AvailabilityB">
+             <summary>
+             班可用率 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.AvailabilitD">
+             <summary>
+             日可用率 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.PerformanceB">
+             <summary>
+             班级效率 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.PerformanceD">
+             <summary>
+             日绩效率 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.QualityrateB">
+             <summary>
+             班质量率 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.QualityrateD">
+             <summary>
+             日质量率 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.ShiftOEE">
+             <summary>
+             班OEE 
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.PowerBiDataShow.DailyOEE">
+             <summary>
+             日OEE 
+            </summary>
+        </member>
+        <member name="T:Hu.Api.Models.RestWork">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.RestWork.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.RestWork.DevID">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.RestWork.Production">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.RestWork.Time">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.RestWork.PartNo">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.RestWork.SerialNo">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.RestWork.Status">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:Hu.Api.Models.ReturnOee">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.ReturnOee.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.ReturnOee.DevID">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.ReturnOee.Status">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.ReturnOee.Time">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.ReturnOee.Source">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:Hu.Api.Models.Role">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Role.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Role.RoleName">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Role.Remark">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Role.FatherId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:Hu.Api.Models.RoleCompetence">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.RoleCompetence.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.RoleCompetence.RoleId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.RoleCompetence.ModuleId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.RoleCompetence.CompetenceId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.RoleCompetence.Remark">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:Hu.Api.Models.StatusColor">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.StatusColor.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.StatusColor.StatusName">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.StatusColor.StatusValue">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.StatusColor.Color">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.StatusColor.IsVisable">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="T:Hu.Api.Models.UserManage">
+             <summary>
+             
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.UserManage.Id">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.UserManage.UserName">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.UserManage.PassWord">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.UserManage.IdCardNum">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.UserManage.Address">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.UserManage.PowerId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.UserManage.DepId">
+             <summary>
+              
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.UserManage.RoleId">
+             <summary>
+              
             </summary>
         </member>
         <member name="M:Hu.Api.Services.BaseServices`2.GetAllAsync">
@@ -370,18 +1259,12 @@
             <param name="query"></param>
             <returns></returns>
         </member>
-        <member name="M:Hu.Api.Services.LoginService.RegisterAsync(Hu.Shared.Dtos.UserDto)">
-            <summary>
-            注册
-            </summary>
-            <param name="userDto"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Hu.Api.Services.LoginService.LoginAsync(Hu.Shared.Dtos.UserDto)">
+        <member name="M:Hu.Api.Services.LoginService.LoginAsync(System.String,System.String)">
             <summary>
             登录
             </summary>
-            <param name="userDto"></param>
+            <param name="userName"></param>
+            <param name="passWord"></param>
             <returns></returns>
         </member>
         <member name="M:Hu.Api.Services.MemoService.QueryPage(Hu.Shared.Parameters.QueryParameter)">
