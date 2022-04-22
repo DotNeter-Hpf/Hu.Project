@@ -238,11 +238,11 @@ F:\Self_Study\Hu.Project\Hu.Api\obj\Debug\net6.0\Hu.Api.xml
 F:\Self_Study\Hu.Project\Hu.Api\obj\Debug\net6.0\Hu.Api.pdb
 F:\Self_Study\Hu.Project\Hu.Api\obj\Debug\net6.0\Hu.Api.genruntimeconfig.cache
 F:\Self_Study\Hu.Project\Hu.Api\obj\Debug\net6.0\refint\Hu.Api.dll
-F:\Self_Study\GitHuRepository\Hu.Project\Hu.Api\bin\Debug\net6.0\Nlog.config
 F:\Self_Study\GitHuRepository\Hu.Project\Hu.Api\bin\Debug\net6.0\appsettings.Development.json
 F:\Self_Study\GitHuRepository\Hu.Project\Hu.Api\bin\Debug\net6.0\QuartzSettings\task_job.json
 F:\Self_Study\GitHuRepository\Hu.Project\Hu.Api\bin\Debug\net6.0\Hu.Api.staticwebassets.runtime.json
 F:\Self_Study\GitHuRepository\Hu.Project\Hu.Api\bin\Debug\net6.0\Hu.Api.exe
+F:\Self_Study\GitHuRepository\Hu.Project\Hu.Api\bin\Debug\net6.0\Nlog.config
 F:\Self_Study\GitHuRepository\Hu.Project\Hu.Api\bin\Debug\net6.0\appsettings.json
 F:\Self_Study\GitHuRepository\Hu.Project\Hu.Api\bin\Debug\net6.0\Hu.Api.deps.json
 F:\Self_Study\GitHuRepository\Hu.Project\Hu.Api\bin\Debug\net6.0\Hu.Api.runtimeconfig.json
@@ -559,3 +559,4 @@ F:\Self_Study\GitHuRepository\Hu.Project\Hu.Api\obj\Debug\net6.0\Hu.Api.xml
 F:\Self_Study\GitHuRepository\Hu.Project\Hu.Api\obj\Debug\net6.0\Hu.Api.pdb
 F:\Self_Study\GitHuRepository\Hu.Project\Hu.Api\obj\Debug\net6.0\Hu.Api.genruntimeconfig.cache
 F:\Self_Study\GitHuRepository\Hu.Project\Hu.Api\obj\Debug\net6.0\ref\Hu.Api.dll
+F:\Self_Study\GitHuRepository\Hu.Project\Hu.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

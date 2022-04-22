@@ -25,36 +25,6 @@ namespace Hu.Api.Services
 
 
         /// <summary>
-        /// 注册
-        /// </summary>
-        /// <param name="userDto"></param>
-        /// <returns></returns>
-        //public async Task<MessageModel> RegisterAsync(UserDto userDto)
-        //{
-        //    try
-        //    {
-        //        //数据传输层和数据库实体层之间的一个映射转换
-        //        var tModel = mapper.Map<User>(userDto);
-        //        var model = await db.Queryable<User>().FirstAsync(it => it.Account.Equals(tModel.Account));
-        //        if (model != null)
-        //            return MessageModel.Fail($"注册账号：{model.Account}已存在，请重新注册！");
-
-        //        tModel.CreateDate = db.GetDate();
-        //        tModel.PassWord = tModel.PassWord.GetMD5();
-
-        //        int row = await db.Insertable(tModel).ExecuteCommandAsync();
-        //        if (row > 0)
-        //            return MessageModel.Success(tModel);
-        //        return MessageModel.Fail("注册失败，请稍后重试");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return MessageModel.Error("注册账号失败:" + ex.Message);
-        //    }
-        //}
-
-
-        /// <summary>
         /// 登录
         /// </summary>
         /// <param name="userName"></param>
@@ -66,7 +36,7 @@ namespace Hu.Api.Services
             {
                 var model = await db.Queryable<UserManage>().FirstAsync(it => it.UserName.Equals(userName) && it.PassWord.Equals(passWord.GetMD5()));
                 if (model == null)
-                    return MessageModel.Fail("账号或密码错误，请重试！");
+                    return MessageModel.Fail("账号或密码错误，请重试");
                 return MessageModel.Success(model);
             }
             catch (Exception ex)
@@ -74,5 +44,71 @@ namespace Hu.Api.Services
                 return MessageModel.Error(ex.Message);
             }
         }
+
+
+        /// <summary>
+        /// 获取菜单上下级
+        /// </summary>
+        /// <returns></returns>
+        public async Task<MessageModel> GetMenuAsync()
+        {
+            //{
+            //    List<Module> moduleList = new()
+            //    {
+            //        new Module() { Id = 1, Menu = "1", Path = "1" },
+            //        new Module() { Id = 2, Menu = "2", Path = "2" },
+            //        new Module() { Id = 3, Menu = "3", Path = "3" }
+            //    };
+            //    var test1 = mapper.Map<List<Module>, List<MenuDto>>(moduleList);
+            //}
+
+            //{
+            //    List<MenuDto> menuList = new()
+            //    {
+            //        new MenuDto() { mid = 4, name = "4", path = "4" },
+            //        new MenuDto() { mid = 5, name = "5", path = "5" },
+            //        new MenuDto() { mid = 6, name = "6", path = "6" }
+            //    };
+
+            //    var test2 = mapper.Map<List<Module>>(menuList);
+            //}
+
+            try
+            {
+                List<Module> tree = await db.Queryable<Module>().ToTreeAsync(it => it.children, it => it.FatherId, 0);
+                foreach (var item in tree)
+                {
+                    item.meta = new Meta
+                    {
+                        title = item.Menu,
+                        icon = item.Icon,
+                        keepAlive = false
+                    };
+                    //判断子集
+                    if (item.children != null)
+                    {
+                        foreach (var child in item.children)
+                        {
+                            child.meta = new Meta
+                            {
+                                title = child.Menu,
+                                icon = child.Icon
+                            };
+                        }
+                    }
+                }
+
+                if (tree == null)
+                    return MessageModel.Fail("没有对应的数据");
+
+                List<MenuDto> listDto = mapper.Map<List<MenuDto>>(tree);
+                return MessageModel.Success(listDto);
+            }
+            catch (Exception ex)
+            {
+                return MessageModel.Error(ex.Message);
+            }
+        }
+
     }
 }

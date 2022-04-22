@@ -23,6 +23,12 @@
             <param name="passWord"></param>
             <returns></returns>
         </member>
+        <member name="M:Hu.Api.Areas.System.Controllers.LoginController.Menu">
+            <summary>
+            获取菜单上下级
+            </summary>
+            <returns></returns>
+        </member>
         <member name="F:Hu.Api.Config.ConnectionString">
             <summary>
             Account have permission to create database
@@ -125,6 +131,11 @@
             首页数据的获取
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:Hu.Api.Extensions.AutoMapperProFile.#ctor">
+            <summary>
+            构造函数实现映射
+            </summary>
         </member>
         <member name="T:Hu.Api.Extensions.Global">
             <summary>
@@ -548,13 +559,13 @@
             </summary>
         </member>
         <member name="P:Hu.Api.Models.Module.Id">
-             <summary>
-              
+            <summary>
+            菜单id
             </summary>
         </member>
         <member name="P:Hu.Api.Models.Module.Menu">
-             <summary>
-              
+            <summary>
+            菜单页面名称
             </summary>
         </member>
         <member name="P:Hu.Api.Models.Module.Icon">
@@ -595,6 +606,16 @@
         <member name="P:Hu.Api.Models.Module.PowerMark">
              <summary>
               
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Module.meta">
+            <summary>
+            用的是 Hu.Shared.Dtos.Meta，实用AutoMapper转换的时候方便一点
+            </summary>
+        </member>
+        <member name="P:Hu.Api.Models.Module.children">
+            <summary>
+            递归，找子集
             </summary>
         </member>
         <member name="T:Hu.Api.Models.NLogInfo">
@@ -1265,6 +1286,12 @@
             </summary>
             <param name="userName"></param>
             <param name="passWord"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hu.Api.Services.LoginService.GetMenuAsync">
+            <summary>
+            获取菜单上下级
+            </summary>
             <returns></returns>
         </member>
         <member name="M:Hu.Api.Services.MemoService.QueryPage(Hu.Shared.Parameters.QueryParameter)">

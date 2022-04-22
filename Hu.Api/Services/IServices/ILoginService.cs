@@ -13,7 +13,8 @@ namespace Hu.Api.Services.IServices
         Task<MessageModel> LoginAsync(string userName, string passWord);
 
 
-        //Task<MessageModel> RegisterAsync(UserManageDto dto);
+        Task<MessageModel> GetMenuAsync();
+        
 
     }
 }

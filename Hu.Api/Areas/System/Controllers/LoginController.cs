@@ -35,5 +35,13 @@ namespace Hu.Api.Areas.System.Controllers
         /// <returns></returns>
         [HttpPost]
         public async Task<MessageModel> Login(string userName, string passWord) => await loginService.LoginAsync(userName, passWord);
+
+
+        /// <summary>
+        /// 获取菜单上下级
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<MessageModel> Menu() => await loginService.GetMenuAsync();
     }
 }
