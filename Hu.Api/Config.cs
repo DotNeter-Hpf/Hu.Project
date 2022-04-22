@@ -10,6 +10,8 @@ namespace Hu.Api
         /// <summary>
         /// Account have permission to create database
         /// </summary>
+
         public static readonly string ConnectionString = "Server=localhost;User ID=sa;Password=sa@2008;database=OeeIot;MultipleActiveResultSets=true;";
+
     }
 }
