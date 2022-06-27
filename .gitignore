@@ -1,2 +1,15 @@
 
 *.log
+.vs/Hu.Project/DesignTimeBuild/.dtbcache.v2
+.vs/Hu.Project/v17/.futdcache.v1
+.vs/Hu.Project/v17/.suo
+Hu.Api/bin/Debug/net6.0/Hu.Api.dll
+Hu.Api/bin/Debug/net6.0/Hu.Api.pdb
+Hu.Api/obj/Debug/net6.0/Hu.Api.assets.cache
+Hu.Api/obj/Debug/net6.0/Hu.Api.csproj.AssemblyReference.cache
+Hu.Api/obj/Debug/net6.0/Hu.Api.dll
+Hu.Api/obj/Debug/net6.0/Hu.Api.GeneratedMSBuildEditorConfig.editorconfig
+Hu.Api/obj/Debug/net6.0/Hu.Api.pdb
+Hu.Api/obj/staticwebassets.pack.sentinel
+Hu.Shared/obj/Debug/net6.0/Hu.Shared.assets.cache
+Hu.Shared/obj/Debug/net6.0/Hu.Shared.csproj.AssemblyReference.cache
